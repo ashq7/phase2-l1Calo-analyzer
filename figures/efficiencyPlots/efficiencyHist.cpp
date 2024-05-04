@@ -53,7 +53,7 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
   TCanvas* Tcan = new TCanvas("Tcan","", 100, 20, 1000, 1000);
   TLegend *leg;
   if (legendPos == "bottomright") {
-    leg = new TLegend(0.40,0.15,0.90,0.45);
+    leg = new TLegend(0.30,0.15,0.80,0.45);
   } 
   else if (legendPos == "topright") {
     leg = new TLegend(0.55,0.65,0.90,0.87);
@@ -92,6 +92,7 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
     (*itGraph)->SetLineWidth(2);
     (*itGraph)->SetLineColor(*itColor);
     (*itGraph)->SetMarkerSize(1);
+    (*itGraph)->SetFillColor(2); 
   }
 
   histDummy->SetMarkerColor(0);
@@ -111,7 +112,6 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
   // histDummy->GetYaxis()->SetRangeUser(0.8, 1.02);
 
   // Customize legend 
-
   for (itGraph = graphs.begin(), itLabel = labels.begin();
        itGraph != graphs.end();
        itGraph++, itLabel++)
@@ -122,7 +122,7 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
 
 
   // Default to RCT label, use GCT if not
-  TString emuLabel = "#scale[0.7]{#bf{CMS}} #scale[0.6]{#bf{" + header + "}}";  
+  TString emuLabel = "#scale[1]{#bf{CMS}} #scale[0.6]{" + header + "}";  
   if (outputName.Contains("RCT")) {
     emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.6]{#it{Phase 2 RCT emulator}}";  
   }
@@ -130,7 +130,7 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
   latex->DrawLatex(0.76, 0.960, "#scale[0.6]{14 TeV, 200 PU}"); 
 
   // Commentary x and y-position
-  float commentaryXpos = 0.50;
+  float commentaryXpos = 0.45;
   
   float offset = 0.0;
   if (legendPos == "bottomright") {

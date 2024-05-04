@@ -125,14 +125,14 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
               l1Cut,
               genCut, xMin, xMax, useVariableBinning);
   vGraphs.push_back(all2_b);
-  vLabels.push_back("#scale[1.1]{Phase 2 emulator w/o WP}");
+  vLabels.push_back("#scale[1.3]{Phase 2 emulator w/o WP}");
   vColors.push_back(kBlack);
 
   TGraphAsymmErrors *tight2_b = calculateEfficiency("genPt", treePath2, rootFileDirectory2,  
                                                   l1Cut + redCutString,
                                                   genCut, xMin, xMax, useVariableBinning);
   vGraphs.push_back(tight2_b);
-  vLabels.push_back("#scale[1.1]{Phase 2 emulator with standalone WP}");
+  vLabels.push_back("#scale[1.3]{Phase 2 emulator with standalone WP}");
   vColors.push_back(kRed);
 
   plotNEfficiencies(vGraphs, vLabels, vColors,
@@ -172,19 +172,19 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
                                                    l1Cut,
                                                    genCut, xMin, xMax, useVariableBinning);
   vGraphs.push_back(allEta2);
-  vLabels.push_back("Phase 2 emulator w/o WP");
+  vLabels.push_back("#scale[1.3]{Phase 2 emulator w/o WP}");
   vColors.push_back(kBlack);
 
   TGraphAsymmErrors *tightEta2 = calculateEfficiency("genEta", treePath2, rootFileDirectory2,
                                                    l1Cut + redCutString,
                                                    genCut, xMin, xMax, useVariableBinning);
   vGraphs.push_back(tightEta2);
-  vLabels.push_back("Phase 2 emulator with standalone WP");
+  vLabels.push_back("#scale[1.3]{Phase 2 emulator with standalone WP}");
   vColors.push_back(kRed); 
 
   plotNEfficiencies(vGraphs, vLabels, vColors,
                     "Gen Electron #eta",
-                    "#bf{Phase-2 Simulation Preliminary",                                                                
+                    "#bf{Phase-2 Simulation Preliminary}",                                                                
                     "efficiency_genEta_barrel_l1Ptgt25GeV_genPtgt30GeV",
                     outputDirectory, "L1 p_{T} > 25 GeV, |#eta^{Gen}| < 1.4841", 0.0, 1.02, "Gen p_{T} > 30 GeV");
   
