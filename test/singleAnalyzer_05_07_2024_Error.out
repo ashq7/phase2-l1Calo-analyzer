@@ -1,0 +1,233 @@
+2024-05-07 17:14:56.610498: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+07-May-2024 17:14:57 CEST  Initiating request to open file root://cms-xrd-global.cern.ch///store/mc/Phase2Fall22DRMiniAOD/DoubleElectron_FlatPt-1To100-gun/GEN-SIM-DIGI-RAW-MINIAOD/PU200_125X_mcRun4_realistic_v2-v1/30000/0024ebea-73de-496a-9d75-6f0a7c3b2ba4.root
+07-May-2024 17:15:08 CEST  Successfully opened file root://cms-xrd-global.cern.ch///store/mc/Phase2Fall22DRMiniAOD/DoubleElectron_FlatPt-1To100-gun/GEN-SIM-DIGI-RAW-MINIAOD/PU200_125X_mcRun4_realistic_v2-v1/30000/0024ebea-73de-496a-9d75-6f0a7c3b2ba4.root
+Begin processing the 1st record. Run 1, Event 66886, LumiSection 419 on stream 0 at 07-May-2024 17:15:19.725 CEST
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: standaloneWP_isolation
+%MSG
+%MSG-w CaloCrystalCluster:  L1TCaloEGammaSingleAnalyzer:l1NtupleSingleProducer  07-May-2024 17:15:26 CEST Run: 1 Event: 66886
+Error: no mapping for ExperimentalParam: trkMatchWP_isolation
+%MSG
+----- Begin Fatal Exception 07-May-2024 17:15:28 CEST-----------------------
+An exception of category 'FileReadError' occurred while
+   [0] Processing  Event run: 1 lumi: 419 event: 66886 stream: 0
+   [1] Running path 'end'
+   [2] Prefetching for module PoolOutputModule/'Out'
+   [3] While reading from source std::vector<l1t::EMTFHit> simEmtfDigis '' HLT
+   [4] Reading branch l1tEMTFHits_simEmtfDigis__HLT.
+   Additional Info:
+      [a] Fatal Root Error: @SUB=TBufferFile::CheckByteCount
+object of class vector<l1t::EMTFHit> read too many bytes: 17904 instead of 17052
+
+----- End Fatal Exception -------------------------------------------------
+07-May-2024 17:15:28 CEST  Closed file root://cms-xrd-global.cern.ch///store/mc/Phase2Fall22DRMiniAOD/DoubleElectron_FlatPt-1To100-gun/GEN-SIM-DIGI-RAW-MINIAOD/PU200_125X_mcRun4_realistic_v2-v1/30000/0024ebea-73de-496a-9d75-6f0a7c3b2ba4.root
