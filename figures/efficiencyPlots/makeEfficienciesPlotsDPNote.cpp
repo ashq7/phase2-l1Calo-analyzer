@@ -139,7 +139,7 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
                     "Gen Electron p_{T} (GeV)",
                     "#bf{Phase-2 Simulation Preliminary}",   
                     outputPlotName +  "_standaloneWP_l1Ptgt25GeV_genPtgt30GeV",                                                             
-                    outputDirectory, "L1 p_{T} > 25 GeV, |#eta^{Gen}| < 1.4841", 0.0, 1.02, "Gen p_{T} > 30 GeV");  
+                    outputDirectory, "p_{T}^{e/#gamma} > 25 GeV,  |#eta^{Gen e}| < 1.5", 0.0, 1.02, "p_{T}^{Gen e} > 30 GeV");  
 
 
   /***********************************************************************************/
@@ -186,7 +186,7 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
                     "Gen Electron #eta",
                     "#bf{Phase-2 Simulation Preliminary}",                                                                
                     "efficiency_genEta_barrel_l1Ptgt25GeV_genPtgt30GeV",
-                    outputDirectory, "L1 p_{T} > 25 GeV, |#eta^{Gen}| < 1.4841", 0.0, 1.02, "Gen p_{T} > 30 GeV");
+                    outputDirectory, "p_{T}^{e/#gamma} > 25 GeV,  |#eta^{Gen e}| < 1.5", 0.0, 1.02, "p_{T}^{Gen e} > 30 GeV");
   
   /*******************************************************/
   /* resolution as a function of genPt                */
@@ -197,11 +197,11 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
   TH1F* reso1 = calculateResolution("(gct_cPt - genPt)/genPt", treePath2, rootFileDirectory2,
                "(abs(genEta) < 1.4841) && (gct_cPt > 25) && (genPt > 30)", -1, 1, useVariableBinning);
   vReso.push_back(reso1);
-  vResoLabels.push_back("barrel");
+  vResoLabels.push_back("|#eta^{Gen e}| < 1.5");
   vResoColors.push_back(kRed);
 
   plotNResolutions(vReso, vResoLabels, vResoColors,
-        "Resolution vs Gen p_{T}",
+        "(p_{T}^{Gen e} - p_{T}^{e/#gamma})/p_{T}^{Gen e}",
         "resolution_genPt",
         outputDirectory);
 

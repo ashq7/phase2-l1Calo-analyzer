@@ -127,7 +127,7 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
     emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.6]{#it{Phase 2 RCT emulator}}";  
   }
   latex->DrawLatex(0.16, 0.960, emuLabel); 
-  latex->DrawLatex(0.76, 0.960, "#scale[0.6]{14 TeV, 200 PU}"); 
+  latex->DrawLatex(0.76, 0.960, "#scale[0.6]{#bf{14 TeV, 200 PU}}"); 
 
   // Commentary x and y-position
   float commentaryXpos = 0.45;

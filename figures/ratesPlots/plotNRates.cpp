@@ -123,10 +123,10 @@ void plotNRates(std::vector<TH1F*> hists,
     emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.6]{#it{Phase 2 RCT emulator}}";  
   }
   latex->DrawLatex(0.17, 0.960, emuLabel); 
-  latex->DrawLatex(0.75, 0.960, "#scale[0.6]{14 TeV, 200 PU}"); 
+  latex->DrawLatex(0.75, 0.960, "#scale[0.6]{#bf{14 TeV, 200 PU}}"); 
 
   float commentaryXpos = 0.41;
-  latex->DrawLatex(commentaryXpos, 0.9, "#scale[0.7]{Phase-2 L1EG (Crystal, Barrel)}");
+  //latex->DrawLatex(commentaryXpos, 0.9, "#scale[0.7]{Phase-2 L1EG (Crystal, Barrel)}");
   //  latex->DrawLatex(commentaryXpos, 0.790, "#scale[0.8]{Phase 2 HLT TDR Winter20}");
 
   Tcan->Update();
