@@ -31,6 +31,7 @@
 
 // ECAL TPs
 #include "DataFormats/EcalDigi/interface/EcalDigiCollections.h"
+#include "DataFormats/EcalDigi/interface/EcalPhase2DigiCollections.h"
 
 // HCAL TPs
 #include "DataFormats/HcalDigi/interface/HcalTriggerPrimitiveDigi.h"
@@ -63,7 +64,7 @@ L1TCaloEGammaSingleAnalyzer::L1TCaloEGammaSingleAnalyzer(const edm::ParameterSet
   decoderToken_(esConsumes<CaloTPGTranscoder, CaloTPGRecord>(edm::ESInputTag("", ""))),
   caloGeometryToken_(esConsumes<CaloGeometry, CaloGeometryRecord>(edm::ESInputTag("", ""))),
   hbTopologyToken_(esConsumes<HcalTopology, HcalRecNumberingRecord>(edm::ESInputTag("", ""))),
-  ecalSrc_(consumes<EcalEBTrigPrimDigiCollection>(cfg.getParameter<edm::InputTag>("ecalDigis"))),
+  ecalSrc_(consumes<EcalEBPhase2TrigPrimDigiCollection>(cfg.getParameter<edm::InputTag>("ecalDigis"))),
   hcalSrc_(consumes<HcalTrigPrimDigiCollection>(cfg.getParameter<edm::InputTag>("hcalDigis"))),
   rctClustersSrc_(consumes<l1tp2::CaloCrystalClusterCollection >(cfg.getParameter<edm::InputTag>("rctClusters"))),
   gctClustersSrc_(consumes<l1tp2::CaloCrystalClusterCollection >(cfg.getParameter<edm::InputTag>("rctClusters"))),
@@ -174,7 +175,7 @@ void L1TCaloEGammaSingleAnalyzer::analyze(const Event& evt, const EventSetup& iS
   edm::Handle<BXVector<l1t::EGamma>> oldL1EGammas;
   edm::Handle<l1tp2::CaloTowerCollection> fullTowers;
   
-  edm::Handle<EcalEBTrigPrimDigiCollection> ecalTPGs;
+  edm::Handle<EcalEBPhase2TrigPrimDigiCollection> ecalTPGs;
   edm::Handle<HcalTrigPrimDigiCollection> hcalTPGs;  
   edm::Handle<edm::SortedCollection<HcalTriggerPrimitiveDigi> > hbhecoll;
  
