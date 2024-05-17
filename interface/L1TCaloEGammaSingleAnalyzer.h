@@ -54,7 +54,11 @@
 #include <list>
 #include <TLorentzVector.h>
 
+// ECAL TPs
 #include "DataFormats/EcalDigi/interface/EcalDigiCollections.h"
+#include "DataFormats/EcalDigi/interface/EcalEBPhase2TriggerPrimitiveDigi.h"
+#include "DataFormats/EcalDigi/interface/EBDataFrame_Ph2.h"
+
 #include "DataFormats/HcalDigi/interface/HcalDigiCollections.h"
 #include "CondFormats/L1TObjects/interface/L1CaloHcalScale.h"
 #include "CondFormats/DataRecord/interface/L1CaloHcalScaleRcd.h"
@@ -316,7 +320,7 @@ int get5x5TPGs(const int maxTPGPt_eta,
   edm::EDGetTokenT<L1CaloRegionCollection> L1RegionCollection;
   edm::EDGetTokenT<L1CaloEmCollection> L1EMCollection_;
   edm::EDGetTokenT<reco::VertexCollection> vertices_;
-  edm::EDGetTokenT<EcalEBTrigPrimDigiCollection> ecalSrc_; 
+  edm::EDGetTokenT<EcalEBPhase2TrigPrimDigiCollection> ecalSrc_; 
   edm::EDGetTokenT<HcalTrigPrimDigiCollection> hcalSrc_;
   //edm::EDGetTokenT<double> recoPt_;
   //edm::EDGetTokenT<std::string> folderName_;

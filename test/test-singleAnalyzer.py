@@ -78,7 +78,6 @@ process.Out = cms.OutputModule( "PoolOutputModule",
     )
 )
 
-
 process.end = cms.EndPath( process.Out )
 
 process.schedule = cms.Schedule(process.pL1EG)

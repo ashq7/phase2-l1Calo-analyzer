@@ -23,7 +23,7 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('Configuration.StandardSequences.Digi_cff')
 process.load('Configuration.StandardSequences.DigiToRaw_cff')
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 # Using https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideL1TPhase2Instructions#Phase2Fall22_Campaign_125X_sampl
 # /DoubleElectron_FlatPt-1To100-gun/Phase2Fall22DRMiniAOD-PU200_125X_mcRun4_realistic_v2-v1/GEN-SIM-DIGI-RAW-MINIAOD
@@ -78,23 +78,23 @@ process.TFileService = cms.Service("TFileService",
     fileName = cms.string('singleAnalyzerNewCollection-test.root')
 )
 
-process.Out = cms.OutputModule( "PoolOutputModule",
-    fileName = cms.untracked.string( "phase2L1EGammaAnalyzer.root" ),
-    outputCommands = cms.untracked.vstring(
-        "drop *",
-        "keep *_l1tPhase2L1CaloEGammaEmulator_*_*",
-        "keep *_simEcalEBTriggerPrimitivePhase2Digis_*_*",
-#        "keep *",
-#        "keep *_Phase2L1CaloEGammaEmulator_*_*",
-#        "keep *_TriggerResults_*_*",
-#        "keep *_simHcalTriggerPrimitiveDigis_*_*",
-#        "keep *_EcalEBTrigPrimProducer_*_*"
-    )
-)
+# process.Out = cms.OutputModule( "PoolOutputModule",
+#     fileName = cms.untracked.string( "phase2L1EGammaAnalyzer.root" ),
+#     outputCommands = cms.untracked.vstring(
+#         "drop *",
+#         "keep *_l1tPhase2L1CaloEGammaEmulator_*_*",
+#         "keep *_simEcalEBTriggerPrimitivePhase2Digis_*_*",
+# #        "keep *",
+# #        "keep *_Phase2L1CaloEGammaEmulator_*_*",
+# #        "keep *_TriggerResults_*_*",
+# #        "keep *_simHcalTriggerPrimitiveDigis_*_*",
+# #        "keep *_EcalEBTrigPrimProducer_*_*"
+#     )
+# )
 
-process.end = cms.EndPath(process.Out)
+#process.end = cms.EndPath(process.Out)
 
-process.schedule = cms.Schedule(process.digitisation_step, process.digi2raw_step, process.pL1EG, process.end)
+process.schedule = cms.Schedule(process.digitisation_step, process.digi2raw_step, process.pL1EG)
 
 # dump_file = open("dump_file.py", "w")
 # dump_file.write(process.dumpPython())
