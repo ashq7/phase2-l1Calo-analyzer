@@ -31,7 +31,8 @@
 
 // ECAL TPs
 #include "DataFormats/EcalDigi/interface/EcalDigiCollections.h"
-#include "DataFormats/EcalDigi/interface/EcalPhase2DigiCollections.h"
+#include "DataFormats/EcalDigi/interface/EcalEBPhase2TriggerPrimitiveDigi.h"
+#include "DataFormats/EcalDigi/interface/EBDataFrame_Ph2.h"
 
 // HCAL TPs
 #include "DataFormats/HcalDigi/interface/HcalTriggerPrimitiveDigi.h"
