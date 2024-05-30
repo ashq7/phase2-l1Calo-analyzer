@@ -88,10 +88,10 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
       
     // De-reference the iterator to get the TGraphAsymmErrors*
     (*itGraph)->SetMarkerColor(*itColor);
-    (*itGraph)->SetMarkerStyle(kFullCircle);
+    (*itGraph)->SetMarkerStyle(50);
     (*itGraph)->SetLineWidth(2);
     (*itGraph)->SetLineColor(*itColor);
-    (*itGraph)->SetMarkerSize(1);
+    (*itGraph)->SetMarkerSize(3);
     (*itGraph)->SetFillColor(2); 
   }
 
@@ -106,10 +106,12 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
 
   histDummy->GetXaxis()->SetTitle(xAxisLabel);
   histDummy->GetYaxis()->SetTitle("L1 Efficiency");
-  histDummy->GetXaxis()->SetTitleSize(0.06); // default is 0.03                                                                    
+  histDummy->GetYaxis()->SetTitleSize(0.05); 
+  histDummy->GetXaxis()->SetTitleSize(0.05); // default is 0.03                                                                    
   /* Set y-axis limits */  
   histDummy->GetYaxis()->SetRangeUser(yMin, yMax);
   // histDummy->GetYaxis()->SetRangeUser(0.8, 1.02);
+  histDummy->GetXaxis()->SetTitleOffset(1.2);
 
   // Customize legend 
   for (itGraph = graphs.begin(), itLabel = labels.begin();
@@ -127,10 +129,10 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
     emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.6]{#it{Phase 2 RCT emulator}}";  
   }
   latex->DrawLatex(0.16, 0.960, emuLabel); 
-  latex->DrawLatex(0.76, 0.960, "#scale[0.6]{#bf{14 TeV, 200 PU}}"); 
+  latex->DrawLatex(0.76, 0.960, "#scale[0.7]{#bf{14 TeV, 200 PU}}"); 
 
   // Commentary x and y-position
-  float commentaryXpos = 0.45;
+  float commentaryXpos = 0.43;
   
   float offset = 0.0;
   if (legendPos == "bottomright") {
@@ -156,6 +158,7 @@ void plotNEfficiencies(std::vector<TGraphAsymmErrors*> graphs,
 
   TString title;
   title = outputDir+outputName;
+  Tcan->SaveAs(title+".C");
   Tcan->SaveAs(title+".pdf");
   Tcan->SaveAs(title+".png");
 

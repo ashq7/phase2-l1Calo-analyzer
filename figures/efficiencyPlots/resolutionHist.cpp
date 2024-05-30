@@ -48,7 +48,7 @@ void plotNResolutions(std::vector<TH1F*> graphs,
 
   setTDRStyle();
   TCanvas* Tcan = new TCanvas("Tcan","", 100, 20, 1000, 800);
-  TLegend* leg = new TLegend(0.7,0.65,0.8,0.8);
+  TLegend* leg = new TLegend(0.6,0.73,0.8,0.8);
   applySmallerLegStyle(leg);
 
   Tcan->SetGrid();
@@ -101,11 +101,11 @@ void plotNResolutions(std::vector<TH1F*> graphs,
   //histDummy->GetYaxis()->SetTitle("#entries");
   histDummy->GetXaxis()->SetTitle(xAxisLabel);
   histDummy->GetXaxis()->SetTitleSize(0.04); // default is 0.03
-  histDummy->GetXaxis()->SetTitleOffset(0.9);
+  histDummy->GetXaxis()->SetTitleOffset(1.2);
   histDummy->GetXaxis()->SetLabelSize(0.03);
   histDummy->GetYaxis()->SetTitle("Fraction of Events");
   histDummy->GetYaxis()->SetTitleSize(0.04);
-  histDummy->GetYaxis()->SetTitleOffset(1.25);
+  histDummy->GetYaxis()->SetTitleOffset(1.2);
   histDummy->GetYaxis()->SetLabelSize(0.03);
   /* Set x-axis limits */ 
   histDummy->GetYaxis()->SetRangeUser(-0.6, 0.6);
@@ -129,7 +129,7 @@ void plotNResolutions(std::vector<TH1F*> graphs,
     emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.8]{#it{Phase 2 RCT emulator}}";  
   }
   latex->DrawLatex(0.16, 0.960, emuLabel); 
-  latex->DrawLatex(0.76, 0.960, "#scale[0.8]{#bf{14 TeV, 200 PU}}");
+  latex->DrawLatex(0.78, 0.960, "#scale[0.8]{#bf{14 TeV, 200 PU}}");
 
 //  if (!(outputName.Contains("genEta")) && !(outputName.Contains("genPhi"))) {  // genPt: put legend below the efficiecy curve
 //    float commentaryXpos = 0.54;
@@ -151,6 +151,7 @@ void plotNResolutions(std::vector<TH1F*> graphs,
 
 
   Tcan->cd();
+  Tcan->SaveAs(outputDir+outputName+".C");
   Tcan->SaveAs(outputDir+outputName+".pdf");
   Tcan->SaveAs(outputDir+outputName+".png");
 

@@ -99,8 +99,10 @@ void plotNRates(std::vector<TH1F*> hists,
   histDummy->GetYaxis()->SetRangeUser(yMin, yMax);
   histDummy->GetXaxis()->SetTitle(xAxisLabel);
   histDummy->GetYaxis()->SetTitle("L1 Rate (kHz)");
-  histDummy->GetXaxis()->SetTitleSize(0.06); // default is 0.03                                                                    
-  histDummy->GetYaxis()->SetTitleSize(0.06); // default is 0.03 
+  histDummy->GetXaxis()->SetTitleSize(0.05); // default is 0.03                                                                    
+  histDummy->GetYaxis()->SetTitleSize(0.05); // default is 0.03 
+  histDummy->GetXaxis()->SetTitleOffset(1.1);
+  histDummy->GetYaxis()->SetTitleOffset(1.4);
 
   histDummy->GetYaxis()->SetMaxDigits(6); // Suppress scientific notation on y-axis because it clashes with the header
   // histDummy->GetYaxis()->SetNoExponent(kFALSE);
@@ -122,8 +124,8 @@ void plotNRates(std::vector<TH1F*> hists,
   if (outputName.Contains("RCT")) {
     emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.6]{#it{Phase 2 RCT emulator}}";  
   }
-  latex->DrawLatex(0.17, 0.960, emuLabel); 
-  latex->DrawLatex(0.75, 0.960, "#scale[0.6]{#bf{14 TeV, 200 PU}}"); 
+  latex->DrawLatex(0.18, 0.960, emuLabel); 
+  latex->DrawLatex(0.785, 0.960, "#scale[0.6]{#bf{14 TeV, 200 PU}}"); 
 
   float commentaryXpos = 0.41;
   //latex->DrawLatex(commentaryXpos, 0.9, "#scale[0.7]{Phase-2 L1EG (Crystal, Barrel)}");
@@ -133,6 +135,7 @@ void plotNRates(std::vector<TH1F*> hists,
 
 
   Tcan->cd();
+  Tcan->SaveAs(outputDir+outputName+".C");
   Tcan->SaveAs(outputDir+outputName+".pdf");
   Tcan->SaveAs(outputDir+outputName+".png");
 

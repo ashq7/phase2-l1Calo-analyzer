@@ -102,8 +102,8 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
   vGraphs.clear();  vLabels.clear();  vColors.clear();
   xMin = 0;
   xMax = 100;
-  genCut  = "(abs(genEta) < 1.4841) && (genPt > 30)";
-  l1Cut   = "(abs(genEta) < 1.4841) && (gct_cPt > 25) && (genPt > 30)";
+  genCut  = "(abs(genEta) < 1.4841)";
+  l1Cut   = "(abs(genEta) < 1.4841) && (gct_cPt > 25)";
   useVariableBinning = false;
 
   /*TGraphAsymmErrors *all_b = calculateEfficiency("genPt", treePath, rootFileDirectory,
@@ -136,14 +136,14 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
   vColors.push_back(kRed);
 
   plotNEfficiencies(vGraphs, vLabels, vColors,
-                    "Gen Electron p_{T} (GeV)",
+                    {"Gen Electron p_{T} (GeV)"},
                     "#bf{Phase-2 Simulation Preliminary}",   
-                    outputPlotName +  "_standaloneWP_l1Ptgt25GeV_genPtgt30GeV",                                                             
-                    outputDirectory, "p_{T}^{e/#gamma} > 25 GeV,  |#eta^{Gen e}| < 1.5", 0.0, 1.02, "p_{T}^{Gen e} > 30 GeV");  
+                    outputPlotName +  "_standaloneWP_l1Ptgt25GeV",                                                             
+                    outputDirectory, "p_{T}^{e/#gamma} > 25 GeV,  |#eta^{Gen e}|<1.5", 0.0, 1.02, "");  
 
 
   /***********************************************************************************/
-  /* (Plot #2) efficiency as a function of genEta: GCT > 25 GeV pT, gen pT > 30 GeV  */
+  /* (Plot #2) efficiency as a function of genEta: GCT > 25 GeV pT  genPt > 30 GeV   */
   /***********************************************************************************/
 
   vGraphs.clear();  vLabels.clear();  vColors.clear();
@@ -197,7 +197,7 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
   TH1F* reso1 = calculateResolution("(gct_cPt - genPt)/genPt", treePath2, rootFileDirectory2,
                "(abs(genEta) < 1.4841) && (gct_cPt > 25) && (genPt > 30)", -1, 1, useVariableBinning);
   vReso.push_back(reso1);
-  vResoLabels.push_back("|#eta^{Gen e}| < 1.5");
+  vResoLabels.push_back("|Generated e #eta|<1.5");
   vResoColors.push_back(kRed);
 
   plotNResolutions(vReso, vResoLabels, vResoColors,
