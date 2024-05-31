@@ -378,7 +378,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
     //printf("my pdg id is %i and my eta is %f\n", ptr->pdgId(), ptr->eta());
     
     // Get gen electrons in barrel + overlap
-    if ( (abs(ptr->pdgId()) == 11) && ( abs(ptr->eta()) < 1.4841 )) {
+    if ( (abs(ptr->pdgId()) == 22) && ( abs(ptr->eta()) < 1.4841 )) {
       genElectrons.push_back(*ptr);
       // Check isLastCopy() and isLastCopyBeforeFSR()
       //std::cout << "isLastCopy: " << ptr->isLastCopy()  << ", "
@@ -395,7 +395,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
   for (auto genElectron : genElectrons) {
     RawParticle particle(genElectron.p4());
     particle.setVertex(genElectron.vertex().x(), genElectron.vertex().y(), genElectron.vertex().z(), 0.);
-    if (fabs(genElectron.pdgId())==11) particle.setMass(.511);
+    if (fabs(genElectron.pdgId())==22) particle.setMass(.511);
     else particle.setMass(0.);
     
     int pdgId = genElectron.pdgId();
@@ -439,8 +439,8 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
   // Loop through the gen-level clusters and match to the RCT clusters, then the GCT clusters.
   //************************************************************************************/ 
   if (requireGenMatching_) {
-
-    for (auto genElectron : propagatedGenElectrons) {
+    //for photons, change from genElectron:propagatedGenElectrons to all genElectrons
+    for (auto genElectron : genElectrons) {
 
       genPt = genElectron.Pt();
       genEta = genElectron.Eta();
