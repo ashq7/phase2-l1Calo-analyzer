@@ -1,6 +1,6 @@
 /*
  *  \file L1TCaloEGammaAnalyzer.cc
- *  Authors S. Kwan, P. Das, I. Ojalvo
+ *  Authors S. Kwan, P. Das, I. Ojalvo, A. Quinn
  */
 
 // system include files
@@ -442,9 +442,9 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
     //for photons, change from genElectron:propagatedGenElectrons to all genElectrons
     for (auto genElectron : genElectrons) {
 
-      genPt = genElectron.Pt();
-      genEta = genElectron.Eta();
-      genPhi = genElectron.Phi();
+      genPt = genElectron.pt();
+      genEta = genElectron.eta();
+      genPhi = genElectron.phi();
 
       rctClustersMatched.clear();
       gctClustersMatched.clear();
@@ -459,7 +459,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
       for (size_t i = 0; i < rctClusterInfo->size(); ++i) {
 
         float this_rct_deltaR = reco::deltaR(rctClusterInfo->at(i).p4.Eta(), rctClusterInfo->at(i).p4.Phi(),
-                                             genElectron.Eta(), genElectron.Phi());
+                                             genElectron.eta(), genElectron.phi());
         // std::cout << "   Comparing "<< this_rct_deltaR << " to current rct_deltaR " << rct_deltaR << std::endl;
 
         if (this_rct_deltaR < 0.5) {
@@ -488,7 +488,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
         rct_cEta = rctClustersMatched.at(0).p4.Eta();
         rct_cPhi = rctClustersMatched.at(0).p4.Phi();
         rct_deltaR = reco::deltaR(rct_cEta, rct_cPhi,
-          genElectron.Eta(), genElectron.Phi());
+          genElectron.eta(), genElectron.phi());
         rct_et2x5 = rctClustersMatched.at(0).et2x5;
         rct_et5x5 = rctClustersMatched.at(0).et5x5; 
 
@@ -520,7 +520,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
         //           << " eta "               << gctClusterInfo->at(i).p4.Eta()
         //           << " phi "               << gctClusterInfo->at(i).p4.Phi() << std::endl;
         float this_gct_deltaR = reco::deltaR(gctClusterInfo->at(i).p4.Eta(), gctClusterInfo->at(i).p4.Phi(),
-                                             genElectron.Eta(), genElectron.Phi());
+                                             genElectron.eta(), genElectron.phi());
         if (this_gct_deltaR < 0.5) {
           TLorentzVector temp_p4;
           temp_p4.SetPtEtaPhiE(gctClusterInfo->at(i).p4.Pt(), gctClusterInfo->at(i).p4.Eta(),
@@ -549,7 +549,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
         gct_cPt  = gctClustersMatched.at(0).p4.Pt();
         gct_cEta = gctClustersMatched.at(0).p4.Eta();
         gct_cPhi = gctClustersMatched.at(0).p4.Phi();
-        gct_deltaR = reco::deltaR(gct_cEta, gct_cPhi, genElectron.Eta(), genElectron.Phi());
+        gct_deltaR = reco::deltaR(gct_cEta, gct_cPhi, genElectron.eta(), genElectron.phi());
         gct_iso   = gctClustersMatched.at(0).iso;
         gct_et2x5 = gctClustersMatched.at(0).et2x5;
         gct_et5x5 = gctClustersMatched.at(0).et5x5; 
