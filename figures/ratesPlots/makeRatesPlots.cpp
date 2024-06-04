@@ -37,7 +37,7 @@ void makeRatesPlots(void)
   gROOT->ProcessLine(".L calculateRates.cpp");
 
   // Input file and output directory
-  TString rootFileDirectory = "/afs/cern.ch/work/s/skkwan/public/forAshling/analyzer_rates.root";
+  TString rootFileDirectory = "/eos/user/a/aquinn/root/MinBias_combined.root";
   TString outputDirectory = "/eos/user/a/aquinn/figures/rates/";
 
   TString rootFileDirectory2 = "/afs/cern.ch/work/s/skkwan/public/forAshling/analyzer_rates_oldEmulator.root";
@@ -68,6 +68,8 @@ void makeRatesPlots(void)
 
   TH1F* egVLoose = calculateRates(folder + "l1eg_pt", evHist, rootFileDirectory);
   TH1F* egStandalone = calculateRates(folder + "l1eg_pt_is_iso_is_ss", evHist, rootFileDirectory);
+  //egVLoose->Rebin();
+  //egStandalone->Rebin();
 
   /*TH1F* egVLoose2 = calculateRates(folder2 + "l1eg_pt", evHist2, rootFileDirectory2);
   TH1F* egStandalone2 = calculateRates(folder2 + "l1eg_pt_is_iso_is_ss", evHist2, rootFileDirectory2);

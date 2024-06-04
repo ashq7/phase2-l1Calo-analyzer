@@ -87,8 +87,6 @@ TH1F* calculateRates(TString histPath,
   // kHz 
   ratesHist->Scale(40.0 * 1000000.0 / 1000.0);
 
-  ratesHist->Rebin();
-
   return ratesHist;
 }
 

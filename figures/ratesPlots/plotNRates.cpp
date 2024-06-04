@@ -87,7 +87,6 @@ void plotNRates(std::vector<TH1F*> hists,
       (*itHist)->SetLineColor(*itColor);
     }
 
-
   histDummy->Draw("");
 
   for (itHist = hists.begin(); itHist != hists.end(); itHist++)
