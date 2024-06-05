@@ -68,8 +68,8 @@ void makeRatesPlots(void)
 
   TH1F* egVLoose = calculateRates(folder + "l1eg_pt", evHist, rootFileDirectory);
   TH1F* egStandalone = calculateRates(folder + "l1eg_pt_is_iso_is_ss", evHist, rootFileDirectory);
-  //egVLoose->Rebin();
-  //egStandalone->Rebin();
+  egVLoose->Rebin();
+  egStandalone->Rebin();
 
   /*TH1F* egVLoose2 = calculateRates(folder2 + "l1eg_pt", evHist2, rootFileDirectory2);
   TH1F* egStandalone2 = calculateRates(folder2 + "l1eg_pt_is_iso_is_ss", evHist2, rootFileDirectory2);
@@ -113,13 +113,13 @@ void makeRatesPlots(void)
 
 
   // one more color if necessary: kAzure-9
-  plotNRates(vHists, vLabels, vColors,
+  /*plotNRates(vHists, vLabels, vColors,
              xMin, xMax, yMin, yMax,
              "ET threshold (GeV)",
              "rates_barrel_overlaid_looseTkWP",
              outputDirectory,
              useLogy);
 
-  vHists.clear();  vLabels.clear();  vColors.clear();
+  vHists.clear();  vLabels.clear();  vColors.clear();*/
 
 }
