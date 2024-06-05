@@ -123,7 +123,7 @@ void L1TCaloEGammaAnalyzer::beginJob( const EventSetup & iSetup) {
 
 void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup )
  {
-  //std::cout << "At top of the analyzer... " << std::endl;
+  std::cout << "At top of the analyzer... " << std::endl;
 
 
   run = evt.id().run();
@@ -375,7 +375,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
     edm::Ptr<reco::GenParticle> ptr(genParticleHandle, i);
     genParticles.push_back(*ptr);
 
-    //printf("my pdg id is %i and my eta is %f\n", ptr->pdgId(), ptr->eta());
+    printf("my pdg id is %i and my eta is %f\n", ptr->pdgId(), ptr->eta());
     
     // Get gen electrons in barrel + overlap
     if ( (abs(ptr->pdgId()) == 22) && ( abs(ptr->eta()) < 1.4841 )) {
@@ -395,7 +395,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
   for (auto genElectron : genElectrons) {
     RawParticle particle(genElectron.p4());
     particle.setVertex(genElectron.vertex().x(), genElectron.vertex().y(), genElectron.vertex().z(), 0.);
-    if (fabs(genElectron.pdgId())==22) particle.setMass(.511);
+    if (fabs(genElectron.pdgId())==22) particle.setMass(0);
     else particle.setMass(0.);
     
     int pdgId = genElectron.pdgId();
