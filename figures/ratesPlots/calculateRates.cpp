@@ -51,6 +51,7 @@ TH1F* calculateRates(TString histPath,
     }
 
   TH1F* hist = (TH1F*)file->Get(histPath);
+  hist->Rebin();
   if (hist == 0)
     {
       std::cout << "ERROR: " << histPath << " not found; EXITING"<<std::endl;
