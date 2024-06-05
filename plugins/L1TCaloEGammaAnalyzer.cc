@@ -383,7 +383,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
       // Check isLastCopy() and isLastCopyBeforeFSR()
       //std::cout << "isLastCopy: " << ptr->isLastCopy()  << ", "
       //  	            << "isLastCopyBeforeFSR: " << ptr->isLastCopyBeforeFSR() << std::endl;
-      //std::cout << "Added genElectron " << ptr->pt() << std::endl;
+      std::cout << "Added genElectron " << ptr->pt() << std::endl;
     }
   }
   
