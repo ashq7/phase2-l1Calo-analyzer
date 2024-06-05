@@ -22,7 +22,7 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 process.source = cms.Source("PoolSource",
                             fileNames = cms.untracked.vstring(
 #                                'root://cmsxrootd.fnal.gov///store/mc/Phase2HLTTDRWinter20DIGI/DoubleElectron_FlatPt-1To100/GEN-SIM-DIGI-RAW/PU200_110X_mcRun4_realistic_v3-v2/20000/40A5AD90-B259-4646-B473-2443964A1C15.root',
-                                'root://cms-xrd-global.cern.ch///store/mc/Phase2Fall22DRMiniAOD/DoubleElectron_FlatPt-1To100-gun/GEN-SIM-DIGI-RAW-MINIAOD/PU200_125X_mcRun4_realistic_v2-v1/30000/0024ebea-73de-496a-9d75-6f0a7c3b2ba4.root'
+                                'root://cms-xrd-global.cern.ch///store/mc/Phase2Spring23DIGIRECOMiniAOD/SinglePhoton_Pt-2To200-gun/GEN-SIM-DIGI-RAW-MINIAOD/PU200_Trk1GeV_131X_mcRun4_realistic_v5-v1/30000/00ad33cd-14b7-4d49-a8b5-67c9c35f9b44.root'
 
                                                       ),
                             inputCommands = cms.untracked.vstring(
