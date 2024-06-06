@@ -24,7 +24,7 @@ config.Data.inputDBS     = 'INPUT_DBS'
 config.Data.unitsPerJob  = 2
 config.Data.splitting    = 'FileBased'
 
-config.Data.outLFNDirBase    = '/store/user/skkwan/Phase2EGammaAnalyzer'
+config.Data.outLFNDirBase    = '/store/user/aquinn8/Phase2EGammaAnalyzer'
 config.Data.publication      = True
 config.Data.outputDatasetTag = 'OUTPUT_TAG'
 
