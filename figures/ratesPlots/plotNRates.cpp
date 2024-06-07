@@ -132,6 +132,7 @@ void plotNRates(std::vector<TH1F*> hists,
 
 
   Tcan->cd();
+  Tcan->SaveAs(outputDir+outputName+".C");
   Tcan->SaveAs(outputDir+outputName+".pdf");
   Tcan->SaveAs(outputDir+outputName+".png");
 

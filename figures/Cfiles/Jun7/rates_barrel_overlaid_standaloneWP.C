@@ -364,4 +364,5 @@ void rates_barrel_overlaid_standaloneWP()
    tex->Draw();
    Tcan->Modified();
    Tcan->SetSelected(Tcan);
+   Tcan->SaveAs("/eos/user/a/aquinn/figures/rates/Jun7/rates.pdf");
 }

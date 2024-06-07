@@ -205,6 +205,23 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
         "resolution_genPt",
         outputDirectory);
 
+  /*******************************************************/
+  /* more finely binned resolution as a function of genPt                */
+  /*******************************************************/
+
+  vReso.clear(); vResoLabels.clear(); vResoColors.clear();
+
+  TH1F* reso2 = calculateResolutionFine("(gct_cPt - genPt)/genPt", treePath2, rootFileDirectory2,
+               "(abs(genEta) < 1.4841) && (gct_cPt > 25) && (genPt > 30)", -1, 1, useVariableBinning);
+  vReso.push_back(reso2);
+  vResoLabels.push_back("barrel");
+  vResoColors.push_back(kRed);
+
+  plotNResolutions(vReso, vResoLabels, vResoColors,
+        "Resolution vs Gen p_{T}",
+        "resolution_genPt_fine",
+        outputDirectory);
+
 }
 
 
