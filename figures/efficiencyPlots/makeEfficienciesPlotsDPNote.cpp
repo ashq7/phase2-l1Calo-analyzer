@@ -37,7 +37,7 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
   TString treePath2 = "l1NtupleSingleProducer/efficiencyTree";
 
   //TString rootFileDirectory = "/eos/user/s/skkwan/phase2RCTDevel/analyzer_DoubleElectron_FlatPt-1To100-gun_oldEmulator.root";
-  TString rootFileDirectory2 = "/eos/user/a/aquinn/root/DoubleElectron_combined.root";
+  TString rootFileDirectory2 = "/eos/user/a/aquinn/root/DoublePhoton_combined.root";
   //TString rootFileDirectory2 = "/eos/user/s/skkwan/phase2RCTDevel/analyzer.root";
   TString signalFileDirectory = ""; //eos/user/s/skkwan/phase2RCTDevel/analyzer_DoubleElectron_partial.root"; // for the parametric curve
   TString outputDirectory = "/eos/user/a/aquinn/figures/efficiencies/";
