@@ -116,13 +116,14 @@ void rates_barrel_overlaid_standaloneWP()
    Rates__1->GetXaxis()->SetTitle("Standalone e/#gamma p_{T} (GeV)");
    Rates__1->GetXaxis()->SetRange(2,32);
    Rates__1->GetXaxis()->SetLabelFont(42);
-   Rates__1->GetXaxis()->SetTitleSize(0.06);
-   Rates__1->GetXaxis()->SetTitleOffset(1);
+   Rates__1->GetXaxis()->SetTitleSize(0.04);
+   Rates__1->GetXaxis()->SetTitleOffset(1.1);
    Rates__1->GetXaxis()->SetTitleFont(42);
    Rates__1->GetYaxis()->SetTitle("L1 Rate (kHz)");
    Rates__1->GetYaxis()->SetNdivisions(6000510);
    Rates__1->GetYaxis()->SetLabelFont(42);
-   Rates__1->GetYaxis()->SetTitleSize(0.06);
+   Rates__1->GetYaxis()->SetTitleSize(0.04);
+   Rates__1->GetYaxis()->SetTitleOffset(1.4); 
    Rates__1->GetYaxis()->SetTitleFont(42);
    Rates__1->GetZaxis()->SetLabelFont(42);
    Rates__1->GetZaxis()->SetTitleOffset(1);
@@ -207,8 +208,14 @@ void rates_barrel_overlaid_standaloneWP()
    Rates__2->SetBinContent(75,0.6019799);
    Rates__2->SetBinContent(76,0.6019799);
    Rates__2->SetBinContent(77,0.30099);
+
    Rates__2->SetEntries(77);
-   Rates__2->SetLineWidth(3);
+   Rates__2->SetLineWidth(2);
+   ci = TColor::GetColor("#5790fc");
+   Rates__2->SetLineColor(ci);                            
+   Rates__2->SetMarkerStyle(20);                              
+   Rates__2->SetMarkerSize(1);                                
+   Rates__2->SetMarkerColor(ci); 
    Rates__2->GetXaxis()->SetLabelFont(42);
    Rates__2->GetXaxis()->SetTitleOffset(1);
    Rates__2->GetXaxis()->SetTitleFont(42);
@@ -299,9 +306,12 @@ void rates_barrel_overlaid_standaloneWP()
    Rates__3->SetBinContent(77,0.30099);
    Rates__3->SetEntries(77);
 
-   ci = TColor::GetColor("#ff0000");
+   ci = TColor::GetColor("#f89c20");
    Rates__3->SetLineColor(ci);
-   Rates__3->SetLineWidth(3);
+   Rates__3->SetLineWidth(2);
+   Rates__3->SetMarkerStyle(21);                              
+   Rates__3->SetMarkerSize(1);                                
+   Rates__3->SetMarkerColor(ci);
    Rates__3->GetXaxis()->SetLabelFont(42);
    Rates__3->GetXaxis()->SetTitleOffset(1);
    Rates__3->GetXaxis()->SetTitleFont(42);
@@ -312,7 +322,7 @@ void rates_barrel_overlaid_standaloneWP()
    Rates__3->GetZaxis()->SetTitleFont(42);
    Rates__3->Draw("SAME");
    
-   TLegend *leg = new TLegend(0.4,0.65,0.9,0.95,NULL,"brNDC");
+   TLegend *leg = new TLegend(0.5,0.65,0.9,0.95,NULL,"brNDC");
    leg->SetBorderSize(0);
    leg->SetTextSize(0.044);
    leg->SetLineColor(1);
@@ -328,40 +338,41 @@ void rates_barrel_overlaid_standaloneWP()
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("Rates","#scale[0.6]{Phase 2 emulator w/o WP}","l");
-   entry->SetLineColor(1);
-   entry->SetLineStyle(1);
-   entry->SetLineWidth(3);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
-   entry->SetTextFont(42);
-   entry=leg->AddEntry("Rates","#scale[0.6]{Phase 2 emulator with standalone WP}","l");
-
-   ci = TColor::GetColor("#ff0000");
+   entry=leg->AddEntry("Rates","#scale[0.6]{Standalone e/#gamma w/o WP}","l");
+   ci = TColor::GetColor("#5790fc");
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetLineWidth(3);
-   entry->SetMarkerColor(1);
+   entry->SetMarkerColor(ci);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(42);
+   entry=leg->AddEntry("Rates","#scale[0.6]{Standalone e/#gamma with WP}","l");
+
+   ci = TColor::GetColor("#f89c20");
+   entry->SetLineColor(ci);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(3);
+   entry->SetMarkerColor(ci);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
    leg->Draw();
-   TLatex *   tex = new TLatex(0.17,0.96,"#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");
+   TLatex *   tex = new TLatex(0.18,0.96,"#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.75,0.96,"#scale[0.6]{14 TeV, 200 PU}");
+      tex = new TLatex(0.785,0.96,"#scale[0.6]{#bf{14 TeV, 200 PU}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.41,0.9,"#scale[0.7]{Phase-2 L1EG (Crystal, Barrel)}");
+      /*tex = new TLatex(0.41,0.9,"#scale[0.7]{Phase-2 L1EG (Crystal, Barrel)}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
-   tex->Draw();
+   tex->Draw();*/
    Tcan->Modified();
    Tcan->SetSelected(Tcan);
    Tcan->SaveAs("/eos/user/a/aquinn/figures/rates/Jun7/rates.pdf");
