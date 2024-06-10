@@ -108,7 +108,7 @@ void plotNResolutions(std::vector<TH1F*> graphs,
   histDummy->GetYaxis()->SetTitleOffset(1.25);
   histDummy->GetYaxis()->SetLabelSize(0.03);
   /* Set y-axis limits */  
-  histDummy->GetYaxis()->SetRangeUser(0.0, 1.0);
+  histDummy->GetYaxis()->SetRangeUser(0.0, 0.4);
   // histDummy->GetYaxis()->SetRangeUser(0.8, 1.02);
 
   /* Customize legend */

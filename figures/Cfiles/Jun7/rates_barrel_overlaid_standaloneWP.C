@@ -5,6 +5,7 @@ void rates_barrel_overlaid_standaloneWP()
 {
 //=========Macro generated from canvas: Tcan/
 //=========  (Fri Jun  7 20:06:35 2024) by ROOT version 6.30/06
+//Execute: root -l -b -q rates_barrel_overlaid_standaloneWP.C 
    TCanvas *Tcan = new TCanvas("Tcan", "",0,0,1000,1000);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
@@ -225,6 +226,8 @@ void rates_barrel_overlaid_standaloneWP()
    Rates__2->GetZaxis()->SetTitleOffset(1);
    Rates__2->GetZaxis()->SetTitleFont(42);
    Rates__2->Draw("SAME");
+   TH1F *Clone_2 =  (TH1F*)Rates__2->Clone();
+   Clone_2->Draw("SAME pez");
    
    TH1F *Rates__3 = new TH1F("Rates__3","Rates",79,-2,154);
    Rates__3->SetBinContent(1,25294.96);
@@ -321,6 +324,8 @@ void rates_barrel_overlaid_standaloneWP()
    Rates__3->GetZaxis()->SetTitleOffset(1);
    Rates__3->GetZaxis()->SetTitleFont(42);
    Rates__3->Draw("SAME");
+   TH1F *Clone_3 =  (TH1F*)Rates__3->Clone();
+   Clone_3->Draw("SAME pez");
    
    TLegend *leg = new TLegend(0.5,0.65,0.9,0.95,NULL,"brNDC");
    leg->SetBorderSize(0);
@@ -335,27 +340,28 @@ void rates_barrel_overlaid_standaloneWP()
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
    entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
+   entry->SetMarkerStyle(20);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("Rates","#scale[0.6]{Standalone e/#gamma w/o WP}","l");
-   ci = TColor::GetColor("#5790fc");
+   //Legend Markers
+   entry=leg->AddEntry("Rates","#scale[0.6]{Standalone e/#gamma w/o WP}","lpez");
+   ci = TColor::GetColor("#5790fc"); //blue
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetLineWidth(3);
    entry->SetMarkerColor(ci);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerStyle(20);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("Rates","#scale[0.6]{Standalone e/#gamma with WP}","l");
 
-   ci = TColor::GetColor("#f89c20");
+   entry=leg->AddEntry("Rates","#scale[0.6]{Standalone e/#gamma with WP}","lpez");
+   ci = TColor::GetColor("#f89c20"); //yellow
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetLineWidth(3);
    entry->SetMarkerColor(ci);
    entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    leg->Draw();
    TLatex *   tex = new TLatex(0.18,0.96,"#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");

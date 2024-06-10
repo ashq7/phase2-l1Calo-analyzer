@@ -154,7 +154,7 @@ TH1F* calculateResolutionFine(TString variable,
 
   /* Numerator and denominator histograms. */
   //TH1F* Num;
-  int bins = 160;
+  int bins = 80;
   TH1F* Num = new TH1F("Num", "Num", bins, low, high);
   // Float_t xbins[10] = {0, 5, 10, 20, 25, 30, 50, 70, 100, 200};
   // Float_t xbins[11] = {20, 25, 30, 35, 40, 45, 50, 60, 70, 90, 110};
