@@ -91,7 +91,7 @@ void efficiency_genPt_Ashling()
    ci = TColor::GetColor("#5790fc");
    grae1->SetMarkerColor(ci);
    grae1->SetMarkerStyle(20);
-   grae1->SetMarkerSize(1); 
+   grae1->SetMarkerSize(2); 
    
    TH1F *Graph_Graph_from_Num3002 = new TH1F("Graph_Graph_from_Num3002","Num",100,0,110);
    Graph_Graph_from_Num3002->SetMinimum(0);
@@ -140,7 +140,7 @@ void efficiency_genPt_Ashling()
    ci = TColor::GetColor("#f89c20");
    grae2->SetMarkerColor(ci);
    grae2->SetMarkerStyle(21);
-   grae2->SetMarkerSize(1); 
+   grae2->SetMarkerSize(2); 
    
    TH1F *Graph_Graph_from_Num3003 = new TH1F("Graph_Graph_from_Num3003","Num",100,0,110);
    Graph_Graph_from_Num3003->SetMinimum(0);
@@ -201,7 +201,7 @@ void efficiency_genPt_Ashling()
    ci = TColor::GetColor("#f89c20");
    entry->SetMarkerColor(ci);
    entry->SetMarkerStyle(50);
-   entry->SetMarkerSize(3);
+// entry->SetMarkerSize(3);
    entry->SetTextFont(42);
    leg->Draw();
    TLatex *   tex = new TLatex(0.16,0.96,"#scale[1]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");

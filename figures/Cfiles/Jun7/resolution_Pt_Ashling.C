@@ -152,8 +152,8 @@ void resolution_Pt_Ashling()
 
    ci = TColor::GetColor("#5790fc");
    Num__2->SetMarkerColor(ci);
-//   Num__2->SetMarkerStyle(20);
-//   Num__2->SetMarkerSize(2);
+   Num__2->SetMarkerStyle(20);
+   Num__2->SetMarkerSize(2);
    Num__2->GetXaxis()->SetLabelFont(42);
    Num__2->GetXaxis()->SetLabelOffset(0.007);
    Num__2->GetXaxis()->SetLabelSize(0.05);
@@ -186,18 +186,18 @@ void resolution_Pt_Ashling()
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerColor(ci);
+   entry->SetMarkerStyle(20);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("Num","|#eta^{GEN e}| < 1.5","le");
+   entry=leg->AddEntry("Num","|#eta^{GEN e}| < 1.5","lepz");
 
    ci = TColor::GetColor("#5790fc");
    entry->SetLineColor(ci);
    entry->SetLineWidth(2);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerColor(ci);
+   entry->SetMarkerStyle(20);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    leg->Draw();
    TLatex *   tex = new TLatex(0.16,0.96,"#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");

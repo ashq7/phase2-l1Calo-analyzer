@@ -96,7 +96,7 @@ void efficiency_eta_Ashling()
    grae1->SetLineColor(ci);
    grae1->SetMarkerColor(ci);
    grae1->SetMarkerStyle(20);
-   grae1->SetMarkerSize(1);
+   grae1->SetMarkerSize(2);
    
    TH1F *Graph_Graph_from_Num3005 = new TH1F("Graph_Graph_from_Num3005","Num",100,-1.704,1.704);
    Graph_Graph_from_Num3005->SetMinimum(0.9525467);
@@ -147,7 +147,7 @@ void efficiency_eta_Ashling()
    ci = TColor::GetColor("#f89c20");
    grae2->SetMarkerColor(ci);
    grae2->SetMarkerStyle(21);
-   grae2->SetMarkerSize(1);
+   grae2->SetMarkerSize(2);
    
    TH1F *Graph_Graph_from_Num3006 = new TH1F("Graph_Graph_from_Num3006","Num",100,-1.704,1.704);
    Graph_Graph_from_Num3006->SetMinimum(0.9239087);
@@ -193,7 +193,7 @@ void efficiency_eta_Ashling()
    entry->SetLineWidth(1);
    entry->SetMarkerColor(ci);
    //entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    entry=leg->AddEntry(grae1,"#scale[0.6]{#scale[1.3]{Standalone e/#gamma w/o WP}}","lep");
    entry->SetLineColor(ci);
@@ -202,7 +202,7 @@ void efficiency_eta_Ashling()
    ci = TColor::GetColor("#f89c20");
    entry->SetMarkerColor(ci);
    //entry->SetMarkerStyle(50);
-   entry->SetMarkerSize(3);
+   //entry->SetMarkerSize(3);
    entry->SetTextFont(42);
 
    entry=leg->AddEntry(grae2,"#scale[0.6]{#scale[1.3]{Standalone e/#gamma with WP}}","lep");
@@ -213,7 +213,7 @@ void efficiency_eta_Ashling()
    ci = TColor::GetColor("#f89c20");
    entry->SetMarkerColor(ci);
    //entry->SetMarkerStyle(50);
-   entry->SetMarkerSize(3);
+   //entry->SetMarkerSize(3);
    entry->SetTextFont(42);
    leg->Draw();
    TLatex *   tex = new TLatex(0.16,0.96,"#scale[1]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");

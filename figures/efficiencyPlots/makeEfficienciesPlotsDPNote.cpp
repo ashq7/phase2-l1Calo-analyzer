@@ -34,13 +34,10 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
   /*TString treePath = "l1NtupleProducer/efficiencyTree";*/
   /*TString treePath2 = "l1NtupleSingleProducer/efficiencyTree";*/
   
-  TString treePath2 = "l1NtupleSingleProducer/efficiencyTree";
+  TString treePath2 = "l1NtupleProducer/efficiencyTree";
 
-  //TString rootFileDirectory = "/eos/user/s/skkwan/phase2RCTDevel/analyzer_DoubleElectron_FlatPt-1To100-gun_oldEmulator.root";
-  TString rootFileDirectory2 = "/eos/user/a/aquinn/root/DoubleElectron_combined.root";
-  //TString rootFileDirectory2 = "/eos/user/s/skkwan/phase2RCTDevel/analyzer.root";
-  TString signalFileDirectory = ""; //eos/user/s/skkwan/phase2RCTDevel/analyzer_DoubleElectron_partial.root"; // for the parametric curve
-  TString outputDirectory = "/eos/user/a/aquinn/figures/efficiencies/";
+  TString rootFileDirectory2 = "/afs/hep.wisc.edu/home/pdas/forAshling/DoublePhoton.root";
+  TString outputDirectory = "/afs/hep.wisc.edu/home/pdas/forAshling/CMSSW_14_0_0_pre3/src/L1Trigger/L1CaloPhase2Analyzer/figures/efficiencyPlots/";
  
 
   float xMin, xMax;
@@ -50,6 +47,7 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
   std::vector<TGraphAsymmErrors*> vGraphs;
   std::vector<TString> vLabels;
   std::vector<int> vColors;
+  std::vector<int> vStyles;
   std::vector<TH1F*> vReso;
   std::vector<TString> vResoLabels;
   std::vector<int> vResoColors;
@@ -96,10 +94,10 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
 
 
   /**********************************************************************************************************/
-  /* (Plot #1) eff. as a function of gen pT, standalone WP, GCT cluster pT > 25 GeV, remove 30GeV cut on pT */
+  /* (Plot #1) eff. as a function of gen pT, standalone WP, GCT cluster pT > 25 GeV, genPt > 30 GeV         */
   /**********************************************************************************************************/
 
-  vGraphs.clear();  vLabels.clear();  vColors.clear();
+  vGraphs.clear();  vLabels.clear();  vColors.clear();  vStyles.clear();
   xMin = 0;
   xMax = 100;
   genCut  = "(abs(genEta) < 1.4841)";
@@ -125,28 +123,33 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
               l1Cut,
               genCut, xMin, xMax, useVariableBinning);
   vGraphs.push_back(all2_b);
-  vLabels.push_back("#scale[1.1]{Standalone e/#gamma w/o WP}");
-  vColors.push_back(kBlack);
+  vLabels.push_back("#scale[1.2]{Standalone e/#gamma w/o WP}");
+  int ci;
+  ci = TColor::GetColor("#5790fc");
+  vColors.push_back(ci);
+  vStyles.push_back(20);
 
   TGraphAsymmErrors *tight2_b = calculateEfficiency("genPt", treePath2, rootFileDirectory2,  
                                                   l1Cut + redCutString,
                                                   genCut, xMin, xMax, useVariableBinning);
   vGraphs.push_back(tight2_b);
-  vLabels.push_back("#scale[1.1]{Standalone e/#gamma with WP}");
-  vColors.push_back(kRed);
+  vLabels.push_back("#scale[1.2]{Standalone e/#gamma with WP}");
+  ci = TColor::GetColor("#f89c20");
+  vColors.push_back(ci);
+  vStyles.push_back(21);
 
-  plotNEfficiencies(vGraphs, vLabels, vColors,
-                    "GEN Electron p_{T} (GeV)",
-                    "#bf{Phase-2 Simulation Preliminary}",   
-                    outputPlotName +  "_standaloneWP_l1Ptgt25GeV",                                                             
-                    outputDirectory, "p_{T}^{e/#gamma} > 25 GeV, |#eta^{GEN e}| < 1.5", 0.0, 1.02, "");  
+  plotNEfficiencies(vGraphs, vLabels, vColors, vStyles,
+                    "GEN Photon p_{T} (GeV)",
+                    "Phase-2 Simulation Preliminary",   
+                    outputPlotName +  "_standaloneWP_l1Ptgt25GeV_genPtgt30GeV",                                                             
+                    outputDirectory, "p_{T}^{e/#gamma} > 25 GeV, |#eta^{GEN #gamma}| < 1.5", 0.0, 1.02, "");  
 
 
   /***********************************************************************************/
   /* (Plot #2) efficiency as a function of genEta: GCT > 25 GeV pT, gen pT > 30 GeV  */
   /***********************************************************************************/
 
-  vGraphs.clear();  vLabels.clear();  vColors.clear();
+  vGraphs.clear();  vLabels.clear();  vColors.clear();  vStyles.clear();
   xMin = -1.5;
   xMax = 1.5;
 
@@ -172,21 +175,25 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
                                                    l1Cut,
                                                    genCut, xMin, xMax, useVariableBinning);
   vGraphs.push_back(allEta2);
-  vLabels.push_back("Phase 2 emulator w/o WP");
-  vColors.push_back(kBlack);
+  vLabels.push_back("#scale[1.2]{Standalone e/#gamma w/o WP}");
+  ci = TColor::GetColor("#5790fc");
+  vColors.push_back(ci);
+  vStyles.push_back(20);
 
   TGraphAsymmErrors *tightEta2 = calculateEfficiency("genEta", treePath2, rootFileDirectory2,
                                                    l1Cut + redCutString,
                                                    genCut, xMin, xMax, useVariableBinning);
   vGraphs.push_back(tightEta2);
-  vLabels.push_back("Phase 2 emulator with standalone WP");
-  vColors.push_back(kRed); 
+  vLabels.push_back("#scale[1.2]{Standalone e/#gamma with WP}");
+  ci = TColor::GetColor("#f89c20");
+  vColors.push_back(ci); 
+  vStyles.push_back(21);
 
-  plotNEfficiencies(vGraphs, vLabels, vColors,
-                    "GEN Electron #eta",
-                    "#bf{Phase-2 Simulation Preliminary",                                                                
+  plotNEfficiencies(vGraphs, vLabels, vColors, vStyles,
+                    "GEN Photon #eta",
+                    "Phase-2 Simulation Preliminary",                                                                
                     "efficiency_genEta_barrel_l1Ptgt25GeV_genPtgt30GeV",
-                    outputDirectory, "L1 p_{T} > 25 GeV, |#eta^{GEN}| < 1.4841", 0.0, 1.02, "GEN p_{T} > 30 GeV");
+                    outputDirectory, "p_{T}^{GEN #gamma} > 30 GeV, |#eta^{GEN #gamma}| < 1.5", 0.0, 1.02, "p_{T}^{e/#gamma} > 25 GeV");
   
   /*******************************************************/
   /* resolution as a function of genPt                */
@@ -197,29 +204,13 @@ void makeEfficienciesPlotForOneScheme(TString mode, bool useOwnIsolationFlag, bo
   TH1F* reso1 = calculateResolution("(gct_cPt - genPt)/genPt", treePath2, rootFileDirectory2,
                "(abs(genEta) < 1.4841) && (gct_cPt > 25) && (genPt > 30)", -1, 1, useVariableBinning);
   vReso.push_back(reso1);
-  vResoLabels.push_back("barrel");
-  vResoColors.push_back(kRed);
+  vResoLabels.push_back("#scale[0.9]{|#eta^{GEN #gamma}| < 1.5}");
+  ci = TColor::GetColor("#5790fc");
+  vResoColors.push_back(ci);
 
   plotNResolutions(vReso, vResoLabels, vResoColors,
-        "Resolution vs GEN p_{T}",
+        "(p_{T}^{e/#gamma} - p_{T}^{GEN #gamma})/p_{T}^{GEN #gamma}",
         "resolution_genPt",
-        outputDirectory);
-
-  /*******************************************************/
-  /* more finely binned resolution as a function of genPt                */
-  /*******************************************************/
-
-  vReso.clear(); vResoLabels.clear(); vResoColors.clear();
-
-  TH1F* reso2 = calculateResolutionFine("(gct_cPt - genPt)/genPt", treePath2, rootFileDirectory2,
-               "(abs(genEta) < 1.4841) && (gct_cPt > 25) && (genPt > 30)", -1, 1, useVariableBinning);
-  vReso.push_back(reso2);
-  vResoLabels.push_back("barrel");
-  vResoColors.push_back(kRed);
-
-  plotNResolutions(vReso, vResoLabels, vResoColors,
-        "Resolution vs GEN p_{T}",
-        "resolution_genPt_fine",
         outputDirectory);
 
 }

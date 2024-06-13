@@ -215,7 +215,7 @@ void rates_barrel_overlaid_standaloneWP()
    ci = TColor::GetColor("#5790fc");
    Rates__2->SetLineColor(ci);                            
    Rates__2->SetMarkerStyle(20);                              
-   Rates__2->SetMarkerSize(1);                                
+   Rates__2->SetMarkerSize(2);                                
    Rates__2->SetMarkerColor(ci); 
    Rates__2->GetXaxis()->SetLabelFont(42);
    Rates__2->GetXaxis()->SetTitleOffset(1);
@@ -313,7 +313,7 @@ void rates_barrel_overlaid_standaloneWP()
    Rates__3->SetLineColor(ci);
    Rates__3->SetLineWidth(2);
    Rates__3->SetMarkerStyle(21);                              
-   Rates__3->SetMarkerSize(1);                                
+   Rates__3->SetMarkerSize(2);                                
    Rates__3->SetMarkerColor(ci);
    Rates__3->GetXaxis()->SetLabelFont(42);
    Rates__3->GetXaxis()->SetTitleOffset(1);
@@ -341,7 +341,7 @@ void rates_barrel_overlaid_standaloneWP()
    entry->SetLineWidth(1);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(20);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    //Legend Markers
    entry=leg->AddEntry("Rates","#scale[0.6]{Standalone e/#gamma w/o WP}","lpez");

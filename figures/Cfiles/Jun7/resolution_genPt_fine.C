@@ -110,8 +110,9 @@ void resolution_genPt_fine()
    Num__3->SetEntries(66154);
    Num__3->SetLineColor(0);
    Num__3->SetLineStyle(0);
-   Num__3->SetMarkerColor(0);
-   Num__3->SetMarkerStyle(20);
+//   Num__3->SetMarkerColor(0);
+ //  Num__3->SetMarkerStyle(20);
+//   Num__3->SetMarkerSize(2);
    Num__3->GetXaxis()->SetTitle("(p_{T}^{e/#gamma} - p_{T}^{GEN e})/p_{T}^{GEN e}");
    Num__3->GetXaxis()->SetLabelFont(42);
    Num__3->GetXaxis()->SetLabelOffset(0.007);
@@ -245,6 +246,8 @@ void resolution_genPt_fine()
    Num__4->GetZaxis()->SetTitleOffset(1.1);
    Num__4->GetZaxis()->SetTitleFont(42);
    Num__4->Draw("hist same");
+   TH1F *Clone_4 =  (TH1F*)Num__4->Clone();
+   Clone_4->Draw("SAME pez");
    
    TLegend *leg = new TLegend(0.68,0.35,0.9,0.55,NULL,"brNDC");
    leg->SetBorderSize(0);
@@ -258,18 +261,18 @@ void resolution_genPt_fine()
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerColor(ci);
+   entry->SetMarkerStyle(20);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("Num","|#eta^{GEN e}| < 1.5","le");
+   entry=leg->AddEntry("Num","|#eta^{GEN e}| < 1.5","lepz");
 
    ci = TColor::GetColor("#5790fc");
    entry->SetLineColor(ci);
    entry->SetLineWidth(2);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerColor(ci);
+   entry->SetMarkerStyle(20);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    leg->Draw();
    TLatex *   tex = new TLatex(0.16,0.96,"#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");
