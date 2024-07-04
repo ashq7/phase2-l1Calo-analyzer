@@ -48,10 +48,10 @@ void plotNResolutions(std::vector<TH1F*> graphs,
 
   setTDRStyle();
   TCanvas* Tcan = new TCanvas("Tcan","", 100, 20, 1000, 800);
-  TLegend* leg = new TLegend(0.8,0.65,0.95,0.8);
+  TLegend* leg = new TLegend(0.68,0.4,0.9,0.55);
   applySmallerLegStyle(leg);
 
-  //Tcan->SetGrid();
+  Tcan->SetGrid();
 
   TLatex *latex = new TLatex(); 
   latex->SetNDC();
@@ -94,6 +94,7 @@ void plotNResolutions(std::vector<TH1F*> graphs,
     {
     //(*itGraph)->Scale(1/(*itGraph)->Integral());
     (*itGraph)->Draw("hist same");
+    (*itGraph)->Draw("pez same");
     }
 
   //histDummy->GetXaxis()->SetTitle("Resolution vs Gen Electron p_{T} [GeV]");
@@ -101,14 +102,14 @@ void plotNResolutions(std::vector<TH1F*> graphs,
   //histDummy->GetYaxis()->SetTitle("#entries");
   histDummy->GetXaxis()->SetTitle(xAxisLabel);
   histDummy->GetXaxis()->SetTitleSize(0.04); // default is 0.03
-  histDummy->GetXaxis()->SetTitleOffset(0.9);
-  histDummy->GetXaxis()->SetLabelSize(0.03);
+  histDummy->GetXaxis()->SetTitleOffset(1.2);
+  histDummy->GetXaxis()->SetLabelSize(0.04);
   histDummy->GetYaxis()->SetTitle("Fraction of Events");
   histDummy->GetYaxis()->SetTitleSize(0.04);
   histDummy->GetYaxis()->SetTitleOffset(1.25);
-  histDummy->GetYaxis()->SetLabelSize(0.03);
+  histDummy->GetYaxis()->SetLabelSize(0.04);
   /* Set y-axis limits */  
-  histDummy->GetYaxis()->SetRangeUser(0.0, 1.0);
+  histDummy->GetYaxis()->SetRangeUser(0.0, 0.7);
   // histDummy->GetYaxis()->SetRangeUser(0.8, 1.02);
 
   /* Customize legend */
@@ -116,10 +117,13 @@ void plotNResolutions(std::vector<TH1F*> graphs,
        itGraph != graphs.end();
        itGraph++, itLabel++)
     {
-      leg->AddEntry(*itGraph, *itLabel,  "l");
+      leg->AddEntry(*itGraph, *itLabel,  "lepz");
     }
   leg->Draw();
 
+
+  latex->DrawLatex(0.7,0.62,"#scale[0.7]{p_{T}^{GEN #gamma} > 30 GeV}");
+  latex->DrawLatex(0.7,0.56,"#scale[0.7]{p_{T}^{e/#gamma} > 25 GeV}");
 
   // Default to RCT label, use GCT if not
   TString emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}";
@@ -127,7 +131,7 @@ void plotNResolutions(std::vector<TH1F*> graphs,
     emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.8]{#it{Phase 2 RCT emulator}}";  
   }
   latex->DrawLatex(0.16, 0.960, emuLabel); 
-  latex->DrawLatex(0.76, 0.960, "#scale[0.8]{14 TeV, 200 PU}");
+  latex->DrawLatex(0.8, 0.960, "#scale[0.7]{#bf{14 TeV, 200 PU}}");
 
 //  if (!(outputName.Contains("genEta")) && !(outputName.Contains("genPhi"))) {  // genPt: put legend below the efficiecy curve
 //    float commentaryXpos = 0.54;
@@ -151,6 +155,7 @@ void plotNResolutions(std::vector<TH1F*> graphs,
   Tcan->cd();
   Tcan->SaveAs(outputDir+outputName+".pdf");
   Tcan->SaveAs(outputDir+outputName+".png");
+  Tcan->SaveAs(outputDir+outputName+".C");
 
   Tcan->Close();
   delete Tcan;
