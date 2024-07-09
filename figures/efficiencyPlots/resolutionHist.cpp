@@ -1,7 +1,8 @@
 /*******************************************************************/
 /* resolutionHist.cpp                                              */
-/* Author: Ashling Quinn                                           */
+/* Author: Ashling Quinn and Pallabi Das                           */
 /* Based on resolutionHist.cpp by Stephanie Kwan                   */
+/* Note: this is version with Pallabi's fit                        */
 /*******************************************************************/
 
 #include "TH1F.h"
@@ -35,6 +36,52 @@
 
 /*******************************************************************/
 
+Double_t Cruijff(Double_t *x, Double_t *par){
+  double norm   = par[0];
+  double mean   = par[1];
+  double sigmaL = par[2];
+  double sigmaR = par[3];
+  double alphaL = par[4];
+  double alphaR = par[5];
+  double dx = x[0] - mean;
+  double sigma = sigmaL;
+  double alpha = alphaL;
+  if (dx > 0) { sigma = sigmaR; alpha = alphaR; }
+  double f = 2*sigma*sigma + alpha*dx*dx;
+  double y = norm * TMath::Exp(-dx*dx/f);
+  return y;
+}
+
+TF1 *Cruijfffit(TH1F *pEff, Double_t norm, Double_t mean, Double_t lambda_sigmaL, Double_t lambda_sigmaR, Double_t alphaL, Double_t alphaR){
+  TF1* f1 = new TF1("f1", Cruijff, -1., 1., 6);
+  f1->SetLineColor(pEff->GetLineColor());
+  f1->SetLineWidth(pEff->GetLineWidth());
+  f1->FixParameter(0,norm);
+  f1->SetParameter(1,mean);
+  f1->SetParameter(2,lambda_sigmaL);
+  f1->SetParameter(3,lambda_sigmaR);
+  f1->SetParameter(4,alphaL);
+  f1->SetParameter(5,alphaR);
+  //f1->SetParameters(norm, mean, lambda_sigmaL, lambda_sigmaR, alphaL, alphaR);
+  pEff->Fit(f1);
+  return f1;
+}
+
+//TF1 *Landaufit(TH1F *pEff, Double_t offset, Double_t norm, Double_t mean, Double_t sigma){
+//  TF1 *f2 = new TF1("f2","[0]+[1]*TMath::Landau((x-[2])/[3])",-1.,1.);
+TF1 *Landaufit(TH1F *pEff, Double_t norm, Double_t mean, Double_t sigma){
+  TF1 *f2 = new TF1("f2","[0]*TMath::Landau((x-[1])/[2])",-0.25,0.25);
+  f2->SetLineColor(pEff->GetLineColor());
+  f2->SetLineWidth(pEff->GetLineWidth());
+  //f2->SetParameter(0, offset);
+  //f2->FixParameter(0, norm);
+  //f2->SetParameter(1, mean);
+  //f2->FixParameter(2, sigma);
+  f2->SetParameters(norm, mean, sigma);
+  pEff->Fit(f2);
+  return f2;
+}
+
 void plotNResolutions(std::vector<TH1F*> graphs, 
              std::vector<TString> labels,
              std::vector<int> colors,
@@ -48,10 +95,13 @@ void plotNResolutions(std::vector<TH1F*> graphs,
 
   setTDRStyle();
   TCanvas* Tcan = new TCanvas("Tcan","", 100, 20, 1000, 800);
-  TLegend* leg = new TLegend(0.8,0.65,0.95,0.8);
+  TLegend* leg = new TLegend(0.68,0.4,0.9,0.55);
   applySmallerLegStyle(leg);
 
-  //Tcan->SetGrid();
+  gStyle->SetOptStat(0);
+  gStyle->SetOptFit(0);
+
+  Tcan->SetGrid();
 
   TLatex *latex = new TLatex(); 
   latex->SetNDC();
@@ -93,7 +143,12 @@ void plotNResolutions(std::vector<TH1F*> graphs,
   for (itGraph = graphs.begin(); itGraph != graphs.end(); itGraph++)
     {
     //(*itGraph)->Scale(1/(*itGraph)->Integral());
-    (*itGraph)->Draw("hist same");
+    //(*itGraph)->Draw("hist same");
+    (*itGraph)->Draw("pez same");
+    //TF1 *fit1 = Cruijfffit((*itGraph), 0.58, -0.015, 0.05, 0.02, 0.1, 0.);
+    //TF1 *fit1 = Landaufit((*itGraph), -0.01, 3.5, -0.01, -0.015);
+    //TF1 *fit1 = Landaufit((*itGraph), 1.85, -0.01, -0.015);
+    TF1 *fit1 = Cruijfffit((*itGraph), 0.149, -0.019, 0.029, 0.02, 0.22, 0.076);
     }
 
   //histDummy->GetXaxis()->SetTitle("Resolution vs Gen Electron p_{T} [GeV]");
@@ -101,14 +156,16 @@ void plotNResolutions(std::vector<TH1F*> graphs,
   //histDummy->GetYaxis()->SetTitle("#entries");
   histDummy->GetXaxis()->SetTitle(xAxisLabel);
   histDummy->GetXaxis()->SetTitleSize(0.04); // default is 0.03
-  histDummy->GetXaxis()->SetTitleOffset(0.9);
-  histDummy->GetXaxis()->SetLabelSize(0.03);
+  histDummy->GetXaxis()->SetTitleOffset(1.2);
+  histDummy->GetXaxis()->SetLabelSize(0.04);
+  histDummy->GetXaxis()->SetNdivisions(508);
   histDummy->GetYaxis()->SetTitle("Fraction of Events");
   histDummy->GetYaxis()->SetTitleSize(0.04);
   histDummy->GetYaxis()->SetTitleOffset(1.25);
-  histDummy->GetYaxis()->SetLabelSize(0.03);
+  histDummy->GetYaxis()->SetLabelSize(0.04);
+  histDummy->GetYaxis()->SetNdivisions(508);
   /* Set y-axis limits */  
-  histDummy->GetYaxis()->SetRangeUser(0.0, 0.4);
+  histDummy->GetYaxis()->SetRangeUser(0.0, 0.2);
   // histDummy->GetYaxis()->SetRangeUser(0.8, 1.02);
 
   /* Customize legend */
@@ -116,10 +173,13 @@ void plotNResolutions(std::vector<TH1F*> graphs,
        itGraph != graphs.end();
        itGraph++, itLabel++)
     {
-      leg->AddEntry(*itGraph, *itLabel,  "l");
+      leg->AddEntry(*itGraph, *itLabel,  "lepz");
     }
   leg->Draw();
 
+
+  latex->DrawLatex(0.7,0.62,"#scale[0.7]{p_{T}^{GEN e} > 30 GeV}");
+  latex->DrawLatex(0.7,0.56,"#scale[0.7]{p_{T}^{e/#gamma} > 25 GeV}");
 
   // Default to RCT label, use GCT if not
   TString emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}";
@@ -127,7 +187,7 @@ void plotNResolutions(std::vector<TH1F*> graphs,
     emuLabel = "#scale[1.0]{#bf{CMS}} #scale[0.8]{#it{Phase 2 RCT emulator}}";  
   }
   latex->DrawLatex(0.16, 0.960, emuLabel); 
-  latex->DrawLatex(0.76, 0.960, "#scale[0.8]{14 TeV, 200 PU}");
+  latex->DrawLatex(0.8, 0.960, "#scale[0.7]{#bf{14 TeV, 200 PU}}");
 
 //  if (!(outputName.Contains("genEta")) && !(outputName.Contains("genPhi"))) {  // genPt: put legend below the efficiecy curve
 //    float commentaryXpos = 0.54;
@@ -149,9 +209,9 @@ void plotNResolutions(std::vector<TH1F*> graphs,
 
 
   Tcan->cd();
-  Tcan->SaveAs(outputDir+outputName+".C");
   Tcan->SaveAs(outputDir+outputName+".pdf");
   Tcan->SaveAs(outputDir+outputName+".png");
+  Tcan->SaveAs(outputDir+outputName+".C");
 
   Tcan->Close();
   delete Tcan;

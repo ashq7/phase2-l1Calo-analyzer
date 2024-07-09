@@ -114,7 +114,7 @@ void rates_barrel_overlaid_standaloneWP()
    TColor *color; // for color definition with alpha
    ci = TColor::GetColor("#000099");
    Rates__1->SetLineColor(ci);
-   Rates__1->GetXaxis()->SetTitle("Standalone e/#gamma p_{T} (GeV)");
+   Rates__1->GetXaxis()->SetTitle("Standalone e/#gamma p_{T} threshold (GeV)");
    Rates__1->GetXaxis()->SetRange(2,32);
    Rates__1->GetXaxis()->SetLabelFont(42);
    Rates__1->GetXaxis()->SetTitleSize(0.04);
