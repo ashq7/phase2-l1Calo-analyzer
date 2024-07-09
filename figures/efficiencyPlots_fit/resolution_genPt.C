@@ -208,4 +208,5 @@ void resolution_genPt()
    tex->Draw();
    Tcan->Modified();
    Tcan->SetSelected(Tcan);
+   //Tcan->SaveAs("/eos/user/a/aquinn/figures/resolutions/resolution_genPt_fit_nolines?.pdf");
 }

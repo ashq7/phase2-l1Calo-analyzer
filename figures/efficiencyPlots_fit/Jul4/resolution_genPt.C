@@ -425,16 +425,17 @@ void resolution_genPt()
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.16,0.96,"#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");
+      tex = new TLatex(0.16,0.96,"#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{#it{Phase-2 Simulation Preliminary}}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.8,0.96,"#scale[0.7]{#bf{14 TeV, 200 PU}}");
+      tex = new TLatex(0.8,0.96,"#scale[0.7]{#bf{PU 200 (14 TeV)}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
    Tcan->Modified();
    Tcan->SetSelected(Tcan);
+   Tcan->SaveAs("/eos/user/a/aquinn/figures/resolutions/resolution_genPt_fit_Jul9.pdf");
 }
