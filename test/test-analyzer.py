@@ -22,8 +22,8 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 process.source = cms.Source("PoolSource",
                             fileNames = cms.untracked.vstring(
 #                                'root://cmsxrootd.fnal.gov///store/mc/Phase2HLTTDRWinter20DIGI/DoubleElectron_FlatPt-1To100/GEN-SIM-DIGI-RAW/PU200_110X_mcRun4_realistic_v3-v2/20000/40A5AD90-B259-4646-B473-2443964A1C15.root',
-                                'file:/afs/cern.ch/user/a/aquinn/public/testNewArea/CMSSW_14_0_0_pre3/24852.634_H125GGgluonfusion_14+2026D98_ecalTPPh2Component/step2.root'
-
+                                'root://cms-xrd-global.cern.ch///store/mc/Phase2Fall22DRMiniAOD/DoubleElectron_FlatPt-1To100-gun/GEN-SIM-DIGI-RAW-MINIAOD/PU200_125X_mcRun4_realistic_v2-v1/30000/0024ebea-73de-496a-9d75-6f0a7c3b2ba4.root'
+                                
                                                       ),
                             inputCommands = cms.untracked.vstring(
                                 "keep *"
@@ -55,7 +55,7 @@ process.pL1EG = cms.Path( process.l1tPhase2L1CaloEGammaEmulator *process.l1Ntupl
 
 # output file
 process.TFileService = cms.Service("TFileService",
-    fileName = cms.string('analyzer-test.root')
+    fileName = cms.string('/afs/cern.ch/user/a/aquinn/analyzer-DefaultECAL-test.root')
 )
 
 # process.Out = cms.OutputModule( "PoolOutputModule",
