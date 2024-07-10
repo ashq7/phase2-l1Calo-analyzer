@@ -55,7 +55,7 @@ void efficiency_eta_Ashling()
    Graph_Graph_from_Num3004->SetStats(0);
    Graph_Graph_from_Num3004->SetLineStyle(0);
    Graph_Graph_from_Num3004->SetMarkerStyle(20);
-   Graph_Graph_from_Num3004->GetXaxis()->SetTitle("GEN Electron #eta");
+   Graph_Graph_from_Num3004->GetXaxis()->SetTitle("GEN Electron  #eta");
    Graph_Graph_from_Num3004->GetXaxis()->SetLabelFont(42);
    Graph_Graph_from_Num3004->GetXaxis()->SetLabelOffset(0.007);
    Graph_Graph_from_Num3004->GetXaxis()->SetLabelSize(0.04);
@@ -195,7 +195,8 @@ void efficiency_eta_Ashling()
    //entry->SetMarkerStyle(21);
    entry->SetMarkerSize(2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry(grae1,"#scale[0.6]{#scale[1.3]{Standalone e/#gamma w/o WP}}","lep");
+   entry=leg->AddEntry(grae1,"#scale[0.6]{#scale[1.3]{Standalone e/ #gamma w/o WP}}","lep");
+   
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
@@ -205,7 +206,7 @@ void efficiency_eta_Ashling()
    //entry->SetMarkerSize(3);
    entry->SetTextFont(42);
 
-   entry=leg->AddEntry(grae2,"#scale[0.6]{#scale[1.3]{Standalone e/#gamma with WP}}","lep");
+   entry=leg->AddEntry(grae2,"#scale[0.6]{#scale[1.3]{Standalone e/ #gamma with WP}}","lep");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
@@ -216,17 +217,17 @@ void efficiency_eta_Ashling()
    //entry->SetMarkerSize(3);
    entry->SetTextFont(42);
    leg->Draw();
-   TLatex *   tex = new TLatex(0.16,0.96,"#scale[1]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");
+   TLatex *   tex = new TLatex(0.16,0.96,"#scale[1]{#bf{CMS}} #scale[0.6]{#bf{#it{Phase-2 Simulation Preliminary}}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.75,0.96,"#scale[0.7]{#bf{14 TeV, 200 PU}}");
+      tex = new TLatex(0.73,0.96,"#scale[0.7]{#bf{PU 200 (14 TeV)}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.43,0.48,"#scale[0.7]{p_{T}^{GEN e} > 30 GeV,  |#eta^{GEN e}| < 1.5}");
+      tex = new TLatex(0.43,0.48,"#scale[0.7]{p_{T}^{GEN e} > 30 GeV,  | #eta^{GEN e} | < 1.5}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);

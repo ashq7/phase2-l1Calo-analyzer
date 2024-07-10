@@ -204,12 +204,12 @@ void efficiency_genPt_Ashling()
 // entry->SetMarkerSize(3);
    entry->SetTextFont(42);
    leg->Draw();
-   TLatex *   tex = new TLatex(0.16,0.96,"#scale[1]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");
+   TLatex *   tex = new TLatex(0.16,0.96,"#scale[1]{#bf{CMS}} #scale[0.6]{#bf{#it{Phase-2 Simulation Preliminary}}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.75,0.96,"#scale[0.7]{#bf{14 TeV, 200 PU}}");
+      tex = new TLatex(0.75,0.96,"#scale[0.7]{#bf{200 PU (14 TeV)}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
