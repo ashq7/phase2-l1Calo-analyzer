@@ -138,7 +138,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
   edm::Handle<l1tp2::CaloCrystalClusterCollection> gctCaloCrystalClusters;
   edm::Handle<l1tp2::CaloTowerCollection> gctCaloL1Towers;
   
-  edm::Handle<EcalEBPhase2TrigPrimDigiCollection> ecalTPGs;
+  edm::Handle<EcalEBTrigPrimDigiCollection> ecalTPGs;
   edm::Handle<HcalTrigPrimDigiCollection> hcalTPGs;  
   edm::Handle<edm::SortedCollection<HcalTriggerPrimitiveDigi> > hbhecoll;
  
