@@ -239,5 +239,6 @@ void efficiency_eta_Ashling()
    tex->Draw();
    Tcan->Modified();
    Tcan->SetSelected(Tcan);
+   Tcan->SaveAs("/eos/user/a/aquinn/figures/rates/Jun7/efficiency_eta.png");
    Tcan->SaveAs("/eos/user/a/aquinn/figures/rates/Jun7/efficiency_eta.pdf");
 }

@@ -369,7 +369,7 @@ void rates_barrel_overlaid_standaloneWP()
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.77,0.96,"#scale[0.6]{#bf{PU 200 (14 TeV)}}");
+      tex = new TLatex(0.74,0.96,"#scale[0.7]{#bf{PU 200 (14 TeV)}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
@@ -381,5 +381,6 @@ void rates_barrel_overlaid_standaloneWP()
    tex->Draw();*/
    Tcan->Modified();
    Tcan->SetSelected(Tcan);
+   Tcan->SaveAs("/eos/user/a/aquinn/figures/rates/Jun7/rates.png");
    Tcan->SaveAs("/eos/user/a/aquinn/figures/rates/Jun7/rates.pdf");
 }
