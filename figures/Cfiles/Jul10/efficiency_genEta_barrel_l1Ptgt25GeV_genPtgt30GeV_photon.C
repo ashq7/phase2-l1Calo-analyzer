@@ -1,7 +1,7 @@
 #ifdef __CLING__
 #pragma cling optimize(0)
 #endif
-void efficiency_genEta_barrel_l1Ptgt25GeV_genPtgt30GeV()
+void efficiency_genEta_barrel_l1Ptgt25GeV_genPtgt30GeV_photon()
 {
 //=========Macro generated from canvas: Tcan/
 //=========  (Tue Jun 11 10:30:18 2024) by ROOT version 6.30/03
@@ -237,5 +237,6 @@ void efficiency_genEta_barrel_l1Ptgt25GeV_genPtgt30GeV()
    tex->Draw();
    Tcan->Modified();
    Tcan->SetSelected(Tcan);
+   Tcan->SaveAs("/eos/user/a/aquinn/figures/efficiencies/efficiency_eta.png");
    Tcan->SaveAs("/eos/user/a/aquinn/figures/efficiencies/efficiency_eta.pdf");
 }
