@@ -64,7 +64,7 @@ L1TCaloEGammaAnalyzer::L1TCaloEGammaAnalyzer( const ParameterSet & cfg ) :
   decoderToken_(esConsumes<CaloTPGTranscoder, CaloTPGRecord>(edm::ESInputTag("", ""))),
   caloGeometryToken_(esConsumes<CaloGeometry, CaloGeometryRecord>(edm::ESInputTag("", ""))),
   hbTopologyToken_(esConsumes<HcalTopology, HcalRecNumberingRecord>(edm::ESInputTag("", ""))),
-  ecalSrc_(consumes<EcalEBPhase2TrigPrimDigiCollection>(cfg.getParameter<edm::InputTag>("ecalDigis"))),
+  ecalSrc_(consumes<EcalEBTrigPrimDigiCollection>(cfg.getParameter<edm::InputTag>("ecalDigis"))),
   hcalSrc_(consumes<HcalTrigPrimDigiCollection>(cfg.getParameter<edm::InputTag>("hcalDigis"))),
   rctClustersSrc_(consumes<l1tp2::CaloCrystalClusterCollection >(cfg.getParameter<edm::InputTag>("rctClusters"))),
   gctClustersSrc_(consumes<l1tp2::CaloCrystalClusterCollection >(cfg.getParameter<edm::InputTag>("gctClusters"))),
@@ -138,7 +138,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
   edm::Handle<l1tp2::CaloCrystalClusterCollection> gctCaloCrystalClusters;
   edm::Handle<l1tp2::CaloTowerCollection> gctCaloL1Towers;
   
-  edm::Handle<EcalEBPhase2TrigPrimDigiCollection> ecalTPGs;
+  edm::Handle<EcalEBTrigPrimDigiCollection> ecalTPGs;
   edm::Handle<HcalTrigPrimDigiCollection> hcalTPGs;  
   edm::Handle<edm::SortedCollection<HcalTriggerPrimitiveDigi> > hbhecoll;
  
@@ -168,6 +168,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
   //std::cout << "Doing event " << event << "....: require gen matching? " <<  requireGenMatching_ << std::endl;
 
   // Get the RCT clusters from the emulator and sort them by pT
+  
   if(evt.getByToken(rctClustersSrc_, rctCaloCrystalClusters)){
     for(const auto & rctCluster : *rctCaloCrystalClusters){
 
@@ -197,7 +198,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
 
     }
   }
-
+  
   std::sort(rctClusters->begin(), rctClusters->end(), L1TCaloEGammaAnalyzer::comparePt);
   std::sort(rctClusterInfo->begin(), rctClusterInfo->end(), L1TCaloEGammaAnalyzer::compareClusterPt);
 
@@ -220,6 +221,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
     }
   }
   
+  /*
   // Get the GCT clusters from the emulator, and sort them by pT
   if(evt.getByToken(gctClustersSrc_, gctCaloCrystalClusters)){
     for(const auto & gctCluster : *gctCaloCrystalClusters){
@@ -254,6 +256,7 @@ void L1TCaloEGammaAnalyzer::analyze( const Event& evt, const EventSetup& iSetup 
       gctClusterInfo->push_back(temp);
     }
   }
+  */
   std::sort(gctClusters->begin(), gctClusters->end(), L1TCaloEGammaAnalyzer::comparePt);
   std::sort(gctClusterInfo->begin(), gctClusterInfo->end(), L1TCaloEGammaAnalyzer::compareClusterPt);
 
