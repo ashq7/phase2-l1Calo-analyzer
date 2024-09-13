@@ -364,12 +364,12 @@ void rates_barrel_overlaid_standaloneWP()
    entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    leg->Draw();
-   TLatex *   tex = new TLatex(0.18,0.96,"#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{Phase-2 Simulation Preliminary}}");
+   TLatex *   tex = new TLatex(0.18,0.96,"#scale[1.0]{#bf{CMS}} #scale[0.6]{#bf{#it{Phase-2 Simulation Preliminary}}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.785,0.96,"#scale[0.6]{#bf{14 TeV, 200 PU}}");
+      tex = new TLatex(0.74,0.96,"#scale[0.7]{#bf{PU 200 (14 TeV)}}");
    tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetLineWidth(2);
@@ -381,5 +381,6 @@ void rates_barrel_overlaid_standaloneWP()
    tex->Draw();*/
    Tcan->Modified();
    Tcan->SetSelected(Tcan);
+   Tcan->SaveAs("/eos/user/a/aquinn/figures/rates/Jun7/rates.png");
    Tcan->SaveAs("/eos/user/a/aquinn/figures/rates/Jun7/rates.pdf");
 }

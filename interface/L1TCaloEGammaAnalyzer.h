@@ -66,7 +66,7 @@
 #include "L1Trigger/L1TCaloLayer1/src/UCTGeometry.hh"
 #include "DataFormats/L1TCalorimeterPhase2/interface/CaloCrystalCluster.h"
 
-#include "DataFormats/EcalDigi/interface/EcalEBPhase2TriggerPrimitiveDigi.h"
+#include "DataFormats/EcalDigi/interface/EcalEBTriggerPrimitiveDigi.h"
 #include "DataFormats/EcalDigi/interface/EBDataFrame_Ph2.h"
 
 //
